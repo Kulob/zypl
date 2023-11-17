@@ -1,6 +1,5 @@
 .container {
-  // background: #0c0c0c;
-  background: #25c9ea;
+  background: #0c0c0c;
   border-radius: 20px;
   padding: 20px 15px;
 }
@@ -10,7 +9,7 @@
   margin: 20px 0;
 
   input {
-    width: 360px;
+    width: 370px;
     height: 60px;
     font-size: 20px;
     padding: 0 10px;
@@ -18,7 +17,7 @@
     background: #1f1f1f;
     border: 1.2px solid #1f1f1f;
     outline: none;
-    border-radius: 5px;
+    border-radius: 15px;
   }
 
   label {
@@ -33,9 +32,11 @@
   }
 }
 input:focus,
-input:valid,
-input:hover {
+input:valid{
   background: transparent;
+  border: 2px solid #3682fa;
+}
+input:hover {
   border: 2px solid #3682fa;
 }
 input:focus + label,

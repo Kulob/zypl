@@ -2,7 +2,7 @@
   position: relative;
 }
 textarea {
-  width: 360px;
+  width: 370px;
   height: 120px;
   font-size: 20px;
   padding: 10px 10px;
@@ -24,8 +24,12 @@ textarea {
   pointer-events: none;
   transition: 0.5s;
 }
-textarea:is(:focus, :valid, :hover) {
+textarea:is(:focus, :valid) {
   background: transparent;
+  color: #3682fa;
+  border: 2px solid #3682fa;
+}
+textarea:hover{
   color: #3682fa;
   border: 2px solid #3682fa;
 }
@@ -51,4 +55,31 @@ textarea::-webkit-scrollbar {
     padding: 5px 5px;
     pointer-events: none;
     transition: 0.5s;
+    display: none;
+}
+// textarea:invalid[data-focused="true"] {
+//   border: 2px solid red;
+// }
+textarea:in(:focus, :valid)[data-focused="true"] {
+  border: 2px solid red;
+}
+textarea:invalid[data-focused="true"] ~ .span-error {
+  display: block;
+  color: red;
+  top: 10px;
+  left: 10px;
+  font-size: 16px;
+}
+textarea:focus[data-focused="true"] ~ .span-error {
+  background: #0c0c0c;
+  top: -13px;
+}
+textarea:invalid[data-focused="true"] ~ .textarea_text {
+  display: none;
+}
+textarea:invalid:focus[data-focused="true"] {
+  border: 2px solid red;
+}
+textarea:invalid:hover[data-focused="true"] {
+  border: 2px solid red;
 }
