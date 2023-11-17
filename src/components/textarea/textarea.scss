@@ -1,0 +1,54 @@
+.textarea_content {
+  position: relative;
+}
+textarea {
+  width: 360px;
+  height: 120px;
+  font-size: 20px;
+  padding: 10px 10px;
+  color: aliceblue;
+  background: #1f1f1f;
+  border: 1.2px solid #1f1f1f;
+  outline: none;
+  border-radius: 10px;
+  resize: none;
+  overflow: hidden;
+}
+.textarea_text {
+  position: absolute;
+  top: 8%;
+  left: 5px;
+  font-size: 16px;
+  color: #8f96a6;
+  padding: 5px 5px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+textarea:is(:focus, :valid, :hover) {
+  background: transparent;
+  color: #3682fa;
+  border: 2px solid #3682fa;
+}
+textarea:focus + .textarea_text,
+textarea:valid + .textarea_text {
+  color: #3682fa;
+  transform: translate(0px, -25px) scale(0.88);
+  font-size: 16px;
+  background: #0c0c0c;
+}
+textarea:hover + .textarea_text {
+  color: #3682fa;
+}
+textarea::-webkit-scrollbar {
+  width: 0px;
+}
+.span-error {
+    position: absolute;
+    top: 8%;
+    left: 5px;
+    font-size: 16px;
+    color: #8f96a6;
+    padding: 5px 5px;
+    pointer-events: none;
+    transition: 0.5s;
+}
