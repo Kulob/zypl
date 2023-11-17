@@ -14,7 +14,7 @@
     height: 60px;
     font-size: 20px;
     padding: 0 10px;
-    color: aliceblue;
+    color: #fff;
     background: #1f1f1f;
     border: 1.2px solid #1f1f1f;
     outline: none;
@@ -66,11 +66,9 @@
 input:focus,
 input:valid{
   background: transparent;
-  color: #3682fa;
   border: 2px solid #3682fa;
 }
 input:hover {
-  color: #3682fa;
   border: 2px solid #3682fa;
 }
 input:focus + .label-input,
@@ -97,9 +95,7 @@ input:invalid[data-focused="true"] ~ .span-error {
   height: 22px;
   background-color: #1F1F1F;
 }
-// input:invalid[data-focused="true"] ~ .span-error 
 input:focus[data-focused="true"] ~ .span-error{
-    // display: block;
     background: #0c0c0c;
     top: -10px;
   }
@@ -173,4 +169,15 @@ button {
   &:hover {
     background: rgb(31, 78, 153);
   }
+}
+.input-email:invalid{
+  width: 370px;
+    height: 60px;
+    font-size: 20px;
+    padding: 0 10px;
+    color: #fff;
+    background: #1f1f1f;
+    border: 1.2px solid #ff0000;
+    outline: none;
+    border-radius: 15px;
 }

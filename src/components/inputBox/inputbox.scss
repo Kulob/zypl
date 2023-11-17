@@ -13,7 +13,7 @@
     height: 60px;
     font-size: 20px;
     padding: 0 10px;
-    color: aliceblue;
+    color: #fff;
     background: #1f1f1f;
     border: 1.2px solid #1f1f1f;
     outline: none;
@@ -22,8 +22,8 @@
 
   label {
     position: absolute;
-    top: 30%;
-    left: 5px;
+    // top: 30%;
+    // left: 5px;
     font-size: 16px;
     color: #8F96A6;
     padding: 0 5px;
@@ -39,14 +39,14 @@ input:valid{
 input:hover {
   border: 2px solid #3682fa;
 }
-input:focus + label,
-input:valid + label {
-  color: #3682fa;
-  top: -10px;
-  left: 10px;
-  font-size: 16px;
-  background: #0c0c0c;
-}
+// input:focus + label,
+// input:valid + label {
+//   color: #3682fa;
+//   top: -10px;
+//   left: 10px;
+//   font-size: 16px;
+//   background: #0c0c0c;
+// }
 input:hover + label {
     color: #3682fa;
 }

@@ -6,7 +6,7 @@ textarea {
   height: 120px;
   font-size: 20px;
   padding: 10px 10px;
-  color: aliceblue;
+  color: #fff;
   background: #1f1f1f;
   border: 1.2px solid #1f1f1f;
   outline: none;
@@ -26,18 +26,16 @@ textarea {
 }
 textarea:is(:focus, :valid) {
   background: transparent;
-  color: #3682fa;
   border: 2px solid #3682fa;
 }
 textarea:hover{
-  color: #3682fa;
   border: 2px solid #3682fa;
 }
 textarea:focus + .textarea_text,
 textarea:valid + .textarea_text {
-  color: #3682fa;
   transform: translate(0px, -25px) scale(0.88);
-  font-size: 16px;
+  font-size: 18px;
+  height: 22px;
   background: #0c0c0c;
 }
 textarea:hover + .textarea_text {

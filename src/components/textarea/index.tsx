@@ -1,7 +1,11 @@
 import React, { SyntheticEvent, useRef, useState } from "react";
 import "./textarea.scss";
 
-const Textarea = ({ register, errors,focused }: any) => {
+type IPropsFocused = {
+  focused: boolean
+}
+
+const Textarea = ({focused }: IPropsFocused) => {
   const textRef = useRef<any>();
   const descRef = useRef<any>();
 
@@ -11,7 +15,6 @@ const Textarea = ({ register, errors,focused }: any) => {
     textRef.current.style.height = `${target.scrollHeight}px`;
     descRef.current.style.top = "10px";
   };
-  console.log(errors?.text?.message);
   
   return (
     <div className="textarea_content">
