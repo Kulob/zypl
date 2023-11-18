@@ -19,7 +19,7 @@ const InputBox = () => {
     <div className='container'>
         <div className="input_group">
             <input type="text" required onChange={handleChange}/>
-            <label htmlFor="">debounce тест</label>
+            <label className='' htmlFor="">debounce тест</label>
         </div>
         <div className="input_group">
             <input type="text" required onChange={handleChangeTrottling}/>

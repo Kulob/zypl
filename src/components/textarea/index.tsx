@@ -1,13 +1,10 @@
 import React, { SyntheticEvent, useRef, useState } from "react";
 import "./textarea.scss";
 
-type IPropsFocused = {
-  focused: boolean
-}
-
-const Textarea = ({focused }: IPropsFocused) => {
+const Textarea = () => {
   const textRef = useRef<any>();
   const descRef = useRef<any>();
+  const [focused, setFocused] = useState<boolean>(false);
 
   const onChangeHandler = function (e: SyntheticEvent) {
     const target = e.target as HTMLTextAreaElement;
@@ -20,6 +17,7 @@ const Textarea = ({focused }: IPropsFocused) => {
     <div className="textarea_content">
       <textarea
         required
+        onBlur={() => setFocused(true)}
         data-focused={focused.toString()}
         ref={textRef}
         onChange={onChangeHandler}

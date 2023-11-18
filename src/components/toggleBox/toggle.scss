@@ -82,9 +82,6 @@ input:valid + .label-input {
 input:hover + .label-input {
   color: #3682fa;
 }
-// input:invalid[data-focused="true"] {
-//   border: none;
-// }
 input:invalid[data-focused="true"] ~ .span-error {
   display: block;
   color: red;
@@ -182,4 +179,49 @@ button {
     border: 1.2px solid #ff0000;
     outline: none;
     border-radius: 15px;
+}
+input:invalid[data-emailFocused="true"] ~ .span-error {
+  display: block;
+  color: red;
+  top: 20px;
+  left: 10px;
+  font-size: 16px;
+  height: 22px;
+  background-color: #1F1F1F;
+}
+input:focus[data-emailFocused="true"] ~ .span-error{
+    background: #0c0c0c;
+    top: -10px;
+  }
+  input:invalid:focus[data-emailFocused="true"] {
+    border: 2px solid red;
+  }
+  input:invalid:hover[data-emailFocused="true"] {
+    border: 2px solid red;
+  }
+input:invalid[data-emailFocused="true"] ~ .label-input {
+  display: none;
+}
+
+input:invalid[data-passwordFocused="true"] ~ .span-error {
+  display: block;
+  color: red;
+  top: 20px;
+  left: 10px;
+  font-size: 16px;
+  height: 22px;
+  background-color: #1F1F1F;
+}
+input:focus[data-passwordFocused="true"] ~ .span-error{
+    background: #0c0c0c;
+    top: -10px;
+  }
+  input:invalid:focus[data-passwordFocused="true"] {
+    border: 2px solid red;
+  }
+  input:invalid:hover[data-passwordFocused="true"] {
+    border: 2px solid red;
+  }
+input:invalid[data-passwordFocused="true"] ~ .label-input {
+  display: none;
 }

@@ -8,16 +8,12 @@ const ToggleBox = () => {
     password: "",
     confirmPassword: "",
   });
-  const [showPassword, setShowPassword] = useState(false);
-  const [focused, setFocused] = useState(false);
-  const [email,setEmail] = useState("")
-  const [error,setError] = useState("Почта обязательно")
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [emailFocused, setEmailFocused] = useState<boolean>(false);
+  const [passwordFocused, setPasswordFocused] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>("");
+  const [error, setError] = useState<string>("Почта обязательно");
 
- 
-  
-  const handleFocus = () => {
-    setFocused(true);
-};
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
   };
@@ -26,16 +22,15 @@ const ToggleBox = () => {
   };
 
   const emailhandleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value)
-    const pattern = /.{3,}/
-  if(pattern.test(email) === false){
-    setError('Почта обязательно')
-  }else if ((email)) {
-    setError('Введите почту правильно')
-  }
-  else{
-    setError('')
-  }
+    setEmail(e.target.value);
+    const pattern = /.{3,}/;
+    if (pattern.test(email) === false) {
+      setError("Почта обязательно");
+    } else if (email) {
+      setError("Введите почту правильно");
+    } else {
+      setError("");
+    }
   };
   return (
     <form className="container" onSubmit={handleSubmit}>
@@ -46,17 +41,14 @@ const ToggleBox = () => {
           type="email"
           value={email}
           required
-          data-focused={focused.toString()}
-          onChange={e =>emailhandleChange(e)}
+          data-emailFocused={emailFocused.toString()}
+          onBlur={() => setEmailFocused(true)}
+          onChange={emailhandleChange}
         />
-        <label className="label-input" htmlFor="">
-          Эл.почта
-        </label>
-        <span className="span-error">
-        {error}
-          </span>
+        <label className="label-input">Эл.почта</label>
+        <span className="span-error">{error}</span>
       </div>
-      <Textarea focused={focused}/>
+      <Textarea />
       <div className="input_group">
         <input
           id="passsword"
@@ -66,8 +58,8 @@ const ToggleBox = () => {
           value={values.password}
           required
           onChange={handleChange}
-          // onBlur={handleFocus}
-          data-focused={focused.toString()}
+          onBlur={() => setPasswordFocused(true)}
+          data-passwordFocused={passwordFocused.toString()}
           autoComplete="off"
         />
         <label className="label-input" htmlFor="">
@@ -90,10 +82,11 @@ const ToggleBox = () => {
           value={values.confirmPassword}
           required
           onChange={handleChange}
-          // onBlur={handleFocus}
-          data-focused={focused.toString()}
+          onBlur={() => setPasswordFocused(true)}
+          data-passwordFocused={passwordFocused.toString()}
           onFocus={() =>
-            values.confirmPassword === "confirmPassword" && setFocused(true)
+            values.confirmPassword === "confirmPassword" &&
+            setPasswordFocused(true)
           }
           autoComplete="off"
         />
@@ -109,7 +102,7 @@ const ToggleBox = () => {
         </label>
         <span>Запомнит сессию</span>
       </div>
-      <button type="submit" onClick={handleFocus}>
+      <button type="submit" onClick={() => setEmailFocused(true)}>
         Подтвердить
       </button>
     </form>
