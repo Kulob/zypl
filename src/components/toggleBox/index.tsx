@@ -15,7 +15,7 @@ const ToggleBox = () => {
 
  
   
-  const handleFocus = (e: any) => {
+  const handleFocus = () => {
     setFocused(true);
 };
   const handleSubmit = (e: { preventDefault: () => void }) => {
@@ -27,15 +27,15 @@ const ToggleBox = () => {
 
   const emailhandleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
-    const regex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i
-  if(!regex.test(email)){
+    const pattern = /.{3,}/
+  if(pattern.test(email) === false){
+    setError('Почта обязательно')
+  }else if ((email)) {
     setError('Введите почту правильно')
   }
   else{
     setError('')
-    return true
   }
-    
   };
   return (
     <form className="container" onSubmit={handleSubmit}>
@@ -44,7 +44,6 @@ const ToggleBox = () => {
           id="email"
           name="email"
           type="email"
-          pattern=".{3,}"
           value={email}
           required
           data-focused={focused.toString()}

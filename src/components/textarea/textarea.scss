@@ -33,6 +33,7 @@ textarea:hover{
 }
 textarea:focus + .textarea_text,
 textarea:valid + .textarea_text {
+  color: #3682fa;
   transform: translate(0px, -25px) scale(0.88);
   font-size: 18px;
   height: 22px;

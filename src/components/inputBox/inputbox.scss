@@ -24,9 +24,10 @@
     position: absolute;
     // top: 30%;
     // left: 5px;
+    left: 0;
     font-size: 16px;
     color: #8F96A6;
-    padding: 0 5px;
+    padding: 10px;
     pointer-events: none;
     transition: 0.5s;
   }
@@ -39,14 +40,14 @@ input:valid{
 input:hover {
   border: 2px solid #3682fa;
 }
-// input:focus + label,
-// input:valid + label {
-//   color: #3682fa;
-//   top: -10px;
-//   left: 10px;
-//   font-size: 16px;
-//   background: #0c0c0c;
-// }
+input:focus + label,
+input:valid + label {
+  color: #3682fa;
+  top: -10px;
+  left: 10px;
+  font-size: 16px;
+  background: #0c0c0c;
+}
 input:hover + label {
     color: #3682fa;
 }
@@ -55,9 +56,10 @@ input:hover + label {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 320px;
+    gap: 20px;
+    width: 350px;
 }
 p{
-  width: 320px;
+  width: 350px;
     color: #fff;
 }

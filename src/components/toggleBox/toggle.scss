@@ -1,6 +1,5 @@
 .container {
   background: #0c0c0c;
-//   background: #25c9ea;
   border-radius: 20px;
   padding: 20px 15px;
 }
@@ -165,9 +164,12 @@ button {
   background: #3283ff;
   color: #fff;
   border: none;
+  transition: .5s;
   cursor: pointer;
   &:hover {
-    background: rgb(31, 78, 153);
+    background: rgb(31, 86, 174);
+    transform: scale(1.1);
+    transition: .5s;
   }
 }
 .input-email:invalid{
